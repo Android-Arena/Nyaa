@@ -25,6 +25,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun frame1(){
+
+}
+
+
+
+@Composable
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
