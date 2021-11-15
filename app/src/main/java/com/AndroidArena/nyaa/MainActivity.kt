@@ -3,10 +3,15 @@ package com.AndroidArena.nyaa
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.SemanticsActions.OnClick
 import androidx.compose.ui.tooling.preview.Preview
 import com.AndroidArena.nyaa.ui.theme.NyaaTheme
 
@@ -25,8 +30,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun frame1(){
-
+private fun frame1(){
+    Column(modifier= Modifier .weight(1f)){
+        OutlinedButton(onClick = { /*TODO*/ }) {
+            Text(text = "Sign Up")
+        }
+    }
 }
 
 
