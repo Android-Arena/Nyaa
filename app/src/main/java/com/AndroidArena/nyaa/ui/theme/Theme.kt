@@ -43,7 +43,7 @@ fun NyaaTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable()
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = frame1,
         shapes = Shapes,
         content = content
     )
