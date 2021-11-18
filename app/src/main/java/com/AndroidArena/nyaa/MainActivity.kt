@@ -25,18 +25,26 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.AndroidArena.nyaa.ui.theme.primaryTextColor
 import com.AndroidArena.nyaa.ui.theme.robotoFamily
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var navController: NavHostController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             NyaaTheme {
+                navController= rememberNavController()
+                SetupNavGraph(navController = navController)
+
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Navigation()
+
                 }
             }
         }

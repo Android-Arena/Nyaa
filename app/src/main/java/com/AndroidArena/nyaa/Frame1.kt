@@ -13,13 +13,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.AndroidArena.nyaa.ui.theme.NyaaTheme
 import com.AndroidArena.nyaa.ui.theme.frame1
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.AndroidArena.nyaa.ui.theme.primaryTextColor
 
 @Composable
-fun Frame1(navController: NavController){
+fun Frame1(
+    navController: NavController
+){
     Surface(
         modifier = Modifier
         // .padding(vertical = 40.dp)
@@ -69,7 +72,7 @@ fun Frame1(navController: NavController){
             Spacer(modifier = Modifier.size(38.dp))
             Button(
                 onClick = {
-                          navController.navigate(Screen.frame2.route)
+                          navController.navigate(route=Screen.frame2.route)
                           },
                 modifier= Modifier
                     .size(width=361.dp, height =56.dp),
@@ -100,6 +103,8 @@ fun Frame1(navController: NavController){
 @Composable
 fun DefaultPreview() {
     NyaaTheme {
-
+        Frame1(
+            navController= rememberNavController()
+        )
     }
 }
