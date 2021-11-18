@@ -31,7 +31,7 @@ fun Frame1(
             painterResource(id = R.drawable.image_frame1),
             contentDescription = "background image",
             contentScale = ContentScale.FillBounds, // or some other scale
-            //modifier = Modifier.matchParentSize()
+            alignment= Alignment.Center,
         )
         Column( modifier = Modifier
             .fillMaxSize(),
