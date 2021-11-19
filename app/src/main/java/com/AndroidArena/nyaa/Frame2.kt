@@ -32,7 +32,7 @@ fun Frame2(
     ) {
         Image(
             painterResource(id = R.drawable.image_frame2),
-            contentDescription = "background image",
+            contentDescription = "background image for frame2",
             contentScale = ContentScale.FillBounds,
             alignment= Alignment.Center,
         )
@@ -45,7 +45,8 @@ fun Frame2(
                 contentDescription = "back_button",
             )
         }
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize()) {
             Spacer(modifier = Modifier.size(406.dp))
             Text(text = "Welcome Back",
                 color = primaryColor,
