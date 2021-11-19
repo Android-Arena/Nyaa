@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "224580571334",
+    "project_id": "nyaa-63678",
+    "storage_bucket": "nyaa-63678.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224580571334:android:a151be164586eda674c7c7",
+        "android_client_info": {
+          "package_name": "com.AndroidArena.nyaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224580571334-q7i1rtd7icnmlisacr5j3lgoqp3tqds7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4PKnQficgu7arFlgjwB6ohR-43dO-2jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224580571334-q7i1rtd7icnmlisacr5j3lgoqp3tqds7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

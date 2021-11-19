@@ -46,7 +46,11 @@ fun Frame2(
             )
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()) {
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(bottom=31.dp)
+
+        ) {
             Spacer(modifier = Modifier.size(406.dp))
             Text(text = "Welcome Back",
                 color = primaryColor,
