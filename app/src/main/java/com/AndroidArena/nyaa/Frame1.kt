@@ -36,9 +36,6 @@ fun Frame1(
             alignment= Alignment.Center,
         )
 
-
-
-
         Column( modifier = Modifier
             .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,

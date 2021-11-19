@@ -1,18 +1,15 @@
 package com.AndroidArena.nyaa
 
 import androidx.compose.animation.*
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,27 +28,39 @@ fun Frame2(
 ){
     Surface(
         modifier = Modifier
+
     ) {
         Image(
-            painterResource(id = R.drawable.image_frame1),
+            painterResource(id = R.drawable.image_frame2),
             contentDescription = "background image",
             contentScale = ContentScale.FillBounds,
             alignment= Alignment.Center,
         )
-
-
-        Column {
+        IconButton(
+            modifier = Modifier
+                .padding(start = 14.dp, top = 31.dp),
+            onClick = {navController.navigate(Screen.frame1.route)}
+        ) {
+            Image(painterResource(id = R.drawable.ic_ion_arrow_back_circle_outline ),
+                contentDescription = "back_button",
+            )
+        }
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Spacer(modifier = Modifier.size(406.dp))
             Text(text = "Welcome Back",
                 color = primaryColor,
                 style=MaterialTheme.typography.h1
-            )
+            ) 
+            Spacer(modifier = Modifier.size(27.dp))
             Text(text="Login to your account",
             color=primaryColor,
             style=MaterialTheme.typography.body2
             )
+            Spacer(modifier = Modifier.size(97.dp))
             Button(onClick = { /*TODO*/ }) {
-
             }
+            Spacer(modifier = Modifier.size(139.dp))
+            Text(text = "Don't have an account? Sign Up")
 
            /* var visible by remember { mutableStateOf(true) }
             val density = LocalDensity.current

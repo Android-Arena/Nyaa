@@ -25,7 +25,8 @@ fun SetupNavGraph(
     ) {
         composable(
             route= Screen.splashScreen.route,
-            exitTransition = {slideOutHorizontally(targetOffsetX = {width -> -2*width}, animationSpec = tween(1000))},
+            exitTransition = {
+                slideOutHorizontally(targetOffsetX = {width -> -2*width}, animationSpec = tween(1000))},
 
         ){
             SplashScreen(navController)
