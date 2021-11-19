@@ -32,10 +32,16 @@ val Typography = Typography(
         ),
         body2 = TextStyle(
         fontFamily = robotoFamily,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
         textAlign = TextAlign.Center
-    )
+        ),
+        h1 =TextStyle(
+            fontFamily = robotoFamily,
+            fontWeight = FontWeight.Bold,
+            fontSize = 55.sp,
+            textAlign = TextAlign.Center
+        ),
     /* Other default text styles to override
     button = TextStyle(
         fontFamily = FontFamily.Default,

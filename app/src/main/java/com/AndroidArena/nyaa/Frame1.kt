@@ -18,6 +18,8 @@ import com.AndroidArena.nyaa.ui.theme.NyaaTheme
 import com.AndroidArena.nyaa.ui.theme.frame1
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.AndroidArena.nyaa.ui.theme.primaryTextColor
+import com.google.accompanist.navigation.animation.navigation
+import com.google.accompanist.navigation.animation.composable
 
 @Composable
 fun Frame1(
@@ -31,8 +33,9 @@ fun Frame1(
             painterResource(id = R.drawable.image_frame1),
             contentDescription = "background image",
             contentScale = ContentScale.FillBounds, // or some other scale
-            //modifier = Modifier.matchParentSize()
+            alignment= Alignment.Center,
         )
+
         Column( modifier = Modifier
             .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,

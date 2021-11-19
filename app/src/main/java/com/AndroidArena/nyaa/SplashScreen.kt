@@ -62,7 +62,7 @@ fun SplashScreen(navController: NavController){
 
 @Preview(showBackground = true)
 @Composable
-fun ComposablePreview() {
+fun SplashScreenPreview() {
     NyaaTheme {
         SplashScreen(
             navController= rememberNavController()
