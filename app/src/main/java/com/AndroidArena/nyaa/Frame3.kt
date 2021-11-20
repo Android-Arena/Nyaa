@@ -27,7 +27,7 @@ import com.google.accompanist.navigation.animation.composable
 
 
 @Composable
-fun Frame2(
+fun Frame3(
     navController: NavController
 ){
     Surface(
@@ -50,19 +50,19 @@ fun Frame2(
             )
         }
         Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
 
         ) {
             Spacer(modifier = Modifier.padding(top = 400.dp))
-            Text(text = "Welcome Back",
+            Text(text = "Register",
                 color = primaryColor,
                 style=MaterialTheme.typography.h1
-            ) 
+            )
             Spacer(modifier = Modifier.padding(top = 18.dp))
-            Text(text="Login to your account",
-            color=primaryColor,
-            style=MaterialTheme.typography.body2
+            Text(text="Create your new account",
+                color=primaryColor,
+                style=MaterialTheme.typography.body2
             )
             Spacer(modifier = Modifier.padding(top=90.dp))
             Button(onClick = { /*TODO*/ }) {
@@ -72,39 +72,39 @@ fun Frame2(
                 .padding(bottom = 30.dp,top = 50.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ){
-                Text("Don't have an account?",
-                color= Black2,
+                Text("Already have an account?",
+                    color= Black2,
                     style = MaterialTheme.typography.h6
                 )
-                TextButton(onClick = {navController.navigate(Screen.frame3.route)  }
+                TextButton(onClick = {navController.navigate(Screen.frame2.route)  }
                 ) {
-                        Text("Sign Up",
-                    color = primaryColor,
-                    style= MaterialTheme.typography.h6,
-                            fontStyle = FontStyle.Italic,
-                            fontWeight = FontWeight.Bold
+                    Text("Login",
+                        color = primaryColor,
+                        style= MaterialTheme.typography.h6,
+                        fontStyle = FontStyle.Italic,
+                        fontWeight = FontWeight.Bold
                     )
                 }
             }
 
-           /* var visible by remember { mutableStateOf(true) }
-            val density = LocalDensity.current
-            AnimatedVisibility(
-                visible = visible,
-                enter = slideInVertically(
-                    // Slide in from 40 dp from the top.
-                    initialOffsetY = { with(density) { -40.dp.roundToPx() } }
-                ) + expandVertically(
-                    // Expand from the top.
-                    expandFrom = Alignment.Top
-                ) + fadeIn(
-                    // Fade in with the initial alpha of 0.3f.
-                    initialAlpha = 0.3f
-                ),
-                exit = slideOutVertically() + shrinkVertically() + fadeOut()
-            ) {
-                Text("Hello", Modifier.fillMaxWidth().height(200.dp))
-            }*/
+            /* var visible by remember { mutableStateOf(true) }
+             val density = LocalDensity.current
+             AnimatedVisibility(
+                 visible = visible,
+                 enter = slideInVertically(
+                     // Slide in from 40 dp from the top.
+                     initialOffsetY = { with(density) { -40.dp.roundToPx() } }
+                 ) + expandVertically(
+                     // Expand from the top.
+                     expandFrom = Alignment.Top
+                 ) + fadeIn(
+                     // Fade in with the initial alpha of 0.3f.
+                     initialAlpha = 0.3f
+                 ),
+                 exit = slideOutVertically() + shrinkVertically() + fadeOut()
+             ) {
+                 Text("Hello", Modifier.fillMaxWidth().height(200.dp))
+             }*/
         }
 
     }
@@ -113,8 +113,8 @@ fun Frame2(
 
 @Composable
 @Preview
-fun Frame2Preview(){
+fun Frame3Preview(){
     NyaaTheme {
-        Frame2(navController = rememberNavController())
+        Frame3(navController = rememberNavController())
     }
 }

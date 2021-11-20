@@ -1,6 +1,7 @@
 package com.AndroidArena.nyaa
 
 import androidx.compose.animation.*
+import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavController
@@ -9,6 +10,7 @@ import androidx.navigation.compose.NavHost
 //import androidx.navigation.compose.composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import androidx.compose.animation.core.tween
+import androidx.compose.ui.Alignment
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
@@ -31,19 +33,30 @@ fun SetupNavGraph(
         ){
             SplashScreen(navController)
         }
-
         composable(
-            route = Screen.frame1.route
-
+            route = Screen.frame1.route,
         ) {
             Frame1(navController)
         }
 
         composable(
-            route = Screen.frame2.route
-
+            route = Screen.frame2.route,
+            enterTransition = {
+                expandIn(
+                    // Overwrites the default spring animation with tween
+                    animationSpec = tween(500, easing = LinearOutSlowInEasing),
+                    // Overwrites the corner of the content that is first revealed
+                    expandFrom = Alignment.BottomEnd
+                )
+            }
         ) {
             Frame2( navController)
+        }
+
+        composable(
+            route=Screen.frame3.route,
+        ){
+            Frame3(navController)
         }
 
     }
