@@ -95,7 +95,7 @@ fun Frame1(
                 ) {
                 Text(text = "Login",
                     color= primaryColor,
-                    style= MaterialTheme.typography.body2
+                    style= MaterialTheme.typography.body2,
                 )
             }
         }
