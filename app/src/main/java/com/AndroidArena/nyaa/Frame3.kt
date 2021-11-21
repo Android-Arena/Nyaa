@@ -35,32 +35,19 @@ fun Frame3(
 
     ) {
         Image(
-            painterResource(id = R.drawable.image_frame2),
-            contentDescription = "background image for frame2",
+            painterResource(id = R.drawable.image_frame3),
+            contentDescription = "background image for frame3",
             contentScale = ContentScale.FillBounds,
             alignment= Alignment.Center,
         )
-        IconButton(
-            modifier = Modifier
-                .padding(start = 14.dp, top = 40.dp),
-            onClick = {navController.navigate(Screen.frame1.route)}
-        ) {
-            Image(painterResource(id = R.drawable.ic_ion_arrow_back_circle_outline ),
-                contentDescription = "back_button",
-            )
-        }
+
         Column(horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxSize()
 
         ) {
-            Spacer(modifier = Modifier.padding(top = 400.dp))
-            Text(text = "Register",
-                color = primaryColor,
-                style=MaterialTheme.typography.h1
-            )
-            Spacer(modifier = Modifier.padding(top = 18.dp))
-            Text(text="Create your new account",
+            Spacer(modifier = Modifier.padding(top = 420.dp))
+            Text(text="It seems so lonely in here!",
                 color=primaryColor,
                 style=MaterialTheme.typography.body2
             )
@@ -68,25 +55,6 @@ fun Frame3(
             Button(onClick = { /*TODO*/ }) {
             }
             //Spacer(modifier = Modifier.weight(.3f))
-            Row(modifier=Modifier
-                .padding(bottom = 30.dp,top = 50.dp),
-                verticalAlignment = Alignment.CenterVertically,
-            ){
-                Text("Already have an account?",
-                    color= Black2,
-                    style = MaterialTheme.typography.h6
-                )
-                TextButton(onClick = {navController.navigate(Screen.frame2.route)  }
-                ) {
-                    Text("Login",
-                        color = primaryColor,
-                        style= MaterialTheme.typography.h6,
-                        fontStyle = FontStyle.Italic,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-            }
-
             /* var visible by remember { mutableStateOf(true) }
              val density = LocalDensity.current
              AnimatedVisibility(
