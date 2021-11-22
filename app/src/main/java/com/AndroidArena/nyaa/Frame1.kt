@@ -75,7 +75,9 @@ fun Frame1(
             Spacer(modifier = Modifier.size(38.dp))
             Button(
                 onClick = {
-                          navController.navigate(route=Screen.frame2.route)
+                          navController.navigate(route=Screen.frame2.route){
+                              popUpTo(Screen.frame1.route){inclusive = true}
+                          }
                           },
                 modifier= Modifier
                     .size(width=361.dp, height =56.dp),

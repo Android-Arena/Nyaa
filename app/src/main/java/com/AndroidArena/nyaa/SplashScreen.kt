@@ -41,7 +41,9 @@ fun SplashScreen(navController: NavController){
                 })
         )
         delay(3000L)
-        navController.navigate(Screen.frame1.route)
+        navController.navigate(Screen.frame1.route){
+            popUpTo(Screen.splashScreen.route){inclusive = true}
+        }
     }
 
     Box(
