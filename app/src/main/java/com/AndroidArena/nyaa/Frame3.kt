@@ -27,7 +27,7 @@ import com.google.accompanist.navigation.animation.composable
 
 
 @Composable
-fun Frame2(
+fun Frame3(
     navController: NavController
 ){
     Surface(
@@ -35,32 +35,44 @@ fun Frame2(
 
     ) {
         Image(
-            painterResource(id = R.drawable.image_frame2),
-            contentDescription = "background image for frame2",
+            painterResource(id = R.drawable.image_frame3),
+            contentDescription = "background image for frame3",
             contentScale = ContentScale.FillBounds,
             alignment= Alignment.Center,
         )
-        IconButton(
-            modifier = Modifier
-                .padding(start = 14.dp, top = 40.dp),
-            onClick = {navController.navigate(Screen.frame1.route)}
-        ) {
-            Image(painterResource(id = R.drawable.ic_ion_arrow_back_circle_outline ),
-                contentDescription = "back_button",
-            )
-        }
+
         Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
+            modifier = Modifier
+                .fillMaxSize()
 
         ) {
-            Spacer(modifier = Modifier.padding(top = 400.dp))
-            Text(text="Login to your account",
-            color=primaryColor,
-            style=MaterialTheme.typography.body2
+            Spacer(modifier = Modifier.padding(top = 420.dp))
+            Text(text="It seems so lonely in here!",
+                color=primaryColor,
+                style=MaterialTheme.typography.body2
             )
             Spacer(modifier = Modifier.padding(top=90.dp))
-
+            Button(onClick = { /*TODO*/ }) {
+            }
+            //Spacer(modifier = Modifier.weight(.3f))
+            /* var visible by remember { mutableStateOf(true) }
+             val density = LocalDensity.current
+             AnimatedVisibility(
+                 visible = visible,
+                 enter = slideInVertically(
+                     // Slide in from 40 dp from the top.
+                     initialOffsetY = { with(density) { -40.dp.roundToPx() } }
+                 ) + expandVertically(
+                     // Expand from the top.
+                     expandFrom = Alignment.Top
+                 ) + fadeIn(
+                     // Fade in with the initial alpha of 0.3f.
+                     initialAlpha = 0.3f
+                 ),
+                 exit = slideOutVertically() + shrinkVertically() + fadeOut()
+             ) {
+                 Text("Hello", Modifier.fillMaxWidth().height(200.dp))
+             }*/
         }
 
     }
@@ -69,8 +81,8 @@ fun Frame2(
 
 @Composable
 @Preview
-fun Frame2Preview(){
+fun Frame3Preview(){
     NyaaTheme {
-        Frame2(navController = rememberNavController())
+        Frame3(navController = rememberNavController())
     }
 }

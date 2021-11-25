@@ -22,7 +22,7 @@ val Typography = Typography(
             fontFamily = robotoFamily,
             fontWeight = FontWeight.Bold,
             fontStyle = FontStyle.Italic,
-            fontSize = 30.sp
+            fontSize = 50.sp
         ),
         button = TextStyle(
             fontFamily = robotoFamily,
@@ -39,7 +39,13 @@ val Typography = Typography(
         h1 =TextStyle(
             fontFamily = robotoFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 55.sp,
+            fontSize = 50.sp,
+            textAlign = TextAlign.Center
+        ),
+        h6 = TextStyle(
+            fontFamily = robotoFamily,
+            //  fontWeight = FontWeight.Medium,
+            fontSize = 18.sp,
             textAlign = TextAlign.Center
         ),
     /* Other default text styles to override
