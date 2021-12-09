@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import androidx.compose.animation.core.tween
 import androidx.compose.ui.Alignment
+import com.AndroidArena.nyaa.model.User
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
@@ -18,7 +19,7 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 @ExperimentalAnimationApi
 @Composable
 fun SetupNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
 ) {
     AnimatedNavHost(
         navController = navController,
@@ -39,7 +40,7 @@ fun SetupNavGraph(
             Frame1(navController)
         }
 
-        composable(
+       /* composable(
             route = Screen.frame2.route,
             enterTransition = {
                 expandIn(
@@ -51,7 +52,7 @@ fun SetupNavGraph(
             }
         ) {
             Frame2( navController)
-        }
+        }*/
 
         composable(
             route=Screen.frame3.route,
