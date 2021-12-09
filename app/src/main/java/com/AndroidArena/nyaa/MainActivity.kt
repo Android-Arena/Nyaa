@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.AndroidArena.nyaa.model.User
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.AndroidArena.nyaa.ui.theme.primaryTextColor
 import com.AndroidArena.nyaa.ui.theme.robotoFamily
@@ -64,7 +65,7 @@ class MainActivity : ComponentActivity() {
 
             NyaaTheme {
                 var navController= rememberAnimatedNavController()
-                SetupNavGraph(navController = navController)
+                SetupNavGraph(navController = navController, )
 
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {

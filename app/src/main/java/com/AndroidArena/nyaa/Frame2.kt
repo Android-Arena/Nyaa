@@ -14,10 +14,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.AndroidArena.nyaa.model.User
 import com.AndroidArena.nyaa.ui.theme.Black2
 import com.AndroidArena.nyaa.ui.theme.NyaaTheme
 import com.AndroidArena.nyaa.ui.theme.primaryColor
@@ -28,7 +30,8 @@ import com.google.accompanist.navigation.animation.composable
 
 @Composable
 fun Frame2(
-    navController: NavController
+   // navController: NavController,
+    user: User
 ){
     Surface(
         modifier = Modifier
@@ -38,9 +41,104 @@ fun Frame2(
             painterResource(id = R.drawable.image_frame2),
             contentDescription = "background image for frame2",
             contentScale = ContentScale.FillBounds,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             alignment= Alignment.Center,
         )
-        IconButton(
+       /* IconButton(
             modifier = Modifier
                 .padding(start = 14.dp, top = 40.dp),
             onClick = {navController.navigate(Screen.frame1.route)}
@@ -48,18 +146,28 @@ fun Frame2(
             Image(painterResource(id = R.drawable.ic_ion_arrow_back_circle_outline ),
                 contentDescription = "back_button",
             )
-        }
+        }*/
         Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
 
         ) {
-            Spacer(modifier = Modifier.padding(top = 400.dp))
-            Text(text="Login to your account",
+            Spacer(modifier = Modifier.padding(top = 450.dp))
+            Text(text="Please enter your username!",
             color=primaryColor,
             style=MaterialTheme.typography.body2
             )
             Spacer(modifier = Modifier.padding(top=90.dp))
+            var text by remember { mutableStateOf(TextFieldValue(""))}
+            OutlinedTextField(
+                value = text,
+                label = { Text(text = "Username") },
+                onValueChange = {
+                    text = it
+                }
+            )
+            Spacer(modifier = Modifier.padding(top = 50.dp))
+            Text(text = user.email)
 
         }
 
@@ -71,6 +179,9 @@ fun Frame2(
 @Preview
 fun Frame2Preview(){
     NyaaTheme {
-        Frame2(navController = rememberNavController())
+        Frame2(
+           // navController = rememberNavController(),
+            user = User(email= "arena.andrd@gmail.com", displayName = "nyaa-63678")
+            )
     }
 }
