@@ -1,3 +1,4 @@
+
 package com.AndroidArena.nyaa
 
 import androidx.compose.runtime.Composable
@@ -23,7 +24,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.AndroidArena.nyaa.ui.theme.primaryColor
-
+/*
 @Composable
 fun Frame4(
     navController: NavController
@@ -96,3 +97,5 @@ fun Frame4Preview(){
         Frame4(navController = rememberNavController())
     }
 }
+
+ */
