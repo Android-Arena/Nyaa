@@ -26,35 +26,45 @@ import java.awt.font.TextAttribute
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.ContentAlpha.medium
+import androidx.compose.ui.unit.sp
 import com.AndroidArena.nyaa.R
-
+import com.AndroidArena.nyaa.ui.theme.NyaaTheme
+import com.AndroidArena.nyaa.ui.theme.primaryColor
+import com.AndroidArena.nyaa.ui.theme.primaryTextColor
 
 @ExperimentalMaterialApi
 @Composable
-fun GoogleSignInButtonUi(text : String="",
-loadingText: String="",
-onClicked:()-> Unit){
+fun GoogleSignInButtonUi(
+    text : String="",
+loadingText: String = "",
+onClicked:() -> Unit){
 
     var clicked by remember { mutableStateOf(false) }
     Surface(
         onClick = {clicked=!clicked},
         shape = Shapes.medium,
-        border = BorderStroke(width = 1.dp, color = Color.LightGray),
-        color = MaterialTheme.colors.surface
+        border = BorderStroke(width = 1.dp, color = primaryColor),
+        color = primaryColor
     ) {
         Row(modifier = Modifier
             .padding(
-                start = 12.dp,
-                end = 16.dp,
-                top = 12.dp,
-                bottom = 12.dp,
+                start = 10.dp,
+                end = 13.dp,
+                top = 10.dp,
+                bottom = 10.dp,
             )
             .animateContentSize(
                 animationSpec = tween(durationMillis = 300, easing = LinearOutSlowInEasing)
             ), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-            Icon(painter = painterResource(id = R.drawable.ic_google_icon), contentDescription = "Google sign button", tint = Color.Unspecified)
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(text = if (clicked) loadingText else text)
+            Icon(painter = painterResource(id = R.drawable.ic_google_icon), contentDescription = "Google sign button", tint = Color.White, )
+            Spacer(modifier = Modifier.width(9.dp))
+            Text(text = if (clicked) loadingText else text,
+                color = primaryTextColor,
+                fontSize = 22.sp
+
+
+
+            )
 
             if (clicked){
                 Spacer(modifier = Modifier.width(16.dp))
@@ -79,7 +89,7 @@ onClicked:()-> Unit){
 fun GoogleButtonPreview(){
     GoogleSignInButtonUi(
 
-        text = "Sign In With Google",
+        text = "Sign up with Google",
         loadingText = "Signing In....",
         onClicked = {}
     )
