@@ -6,17 +6,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.AlignmentLine
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.AndroidArena.nyaa.model.User
@@ -25,12 +28,14 @@ import com.AndroidArena.nyaa.ui.theme.NyaaTheme
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.modifier.modifierLocalOf
 
-
+//@OptIn(ExperimentalComposeUiApi::class)
 
 @Composable
 fun Frame2(
-   // navController: NavController,
+   navController: NavController,
     user: User
 ){
     Surface(
@@ -42,9 +47,9 @@ fun Frame2(
             contentDescription = "background image for frame2",
             contentScale = ContentScale.FillBounds,
 
-            alignment= Alignment.Center,
+            alignment = Alignment.Center,
         )
-       /* IconButton(
+        /* IconButton(
             modifier = Modifier
                 .padding(start = 14.dp, top = 40.dp),
             onClick = {navController.navigate(Screen.frame1.route)}
@@ -53,29 +58,80 @@ fun Frame2(
                 contentDescription = "back_button",
             )
         }*/
-        Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
 
         ) {
-            Spacer(modifier = Modifier.padding(top = 450.dp))
-            Text(text="Please enter your username!",
-            color=primaryColor,
-            style=MaterialTheme.typography.body2
+            Spacer(modifier = Modifier.padding(top = 410.dp))
+            Text(
+                text = "Please enter your username!",
+                color = primaryColor,
+                style = MaterialTheme.typography.h2
             )
-            Spacer(modifier = Modifier.padding(top=90.dp))
-            var text by remember { mutableStateOf(TextFieldValue(""))}
-            OutlinedTextField(
-                value = text,
-                label = { Text(text = "Username") },
-                onValueChange = {
-                    text = it
-                }
-            )
-            Spacer(modifier = Modifier.padding(top = 50.dp))
-            Text(text = user.email)
-
         }
+
+
+//            val textStyleBody1 = MaterialTheme.typography.body1
+//            var textStyle by remember { mutableStateOf(textStyleBody1) }
+
+            var text by remember { mutableStateOf("sherlock") }
+            // var text2 by remember{ mutableStateOf(TextFieldValue(user.displayName))}
+            val maxChar = 10
+
+            Column() {
+                Spacer(modifier = Modifier.padding(top=450.dp))
+
+                OutlinedTextField(
+                    value = text,
+                   // modifier = Modifier.padding(start=7.dp),
+                            onValueChange = {
+                        // modifierLocalOf {  }
+                        if (it.length <= maxChar) {
+                            text = it
+                        }
+                    },
+                    modifier = Modifier
+                        //                 .height(90.dp)
+                        .fillMaxWidth()
+                      //  .fillMaxHeight(0.1f)
+                        //                .fillMaxHeight()
+                        .padding(35.dp),
+                //.size(68.dp),
+
+                    shape = RoundedCornerShape(45),
+                    label = {
+                        Text(
+                            modifier = Modifier.padding(start=7.dp),
+                            text = "Username",
+                            fontSize = 25.sp
+                        )
+                    },
+                    // fontSize = 30.sp
+
+
+                )
+
+            }
+
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+
+        ) {
+        Spacer(modifier = Modifier.padding(top = 640.dp))
+            Text(
+                text = user.email,
+                fontSize = 24.sp
+            )
+            Text(
+                text = user.displayName,
+                fontSize = 24.sp
+            )
+        }
+
 
     }
 
@@ -86,8 +142,8 @@ fun Frame2(
 fun Frame2Preview(){
     NyaaTheme {
         Frame2(
-           // navController = rememberNavController(),
-            user = User(email= "arena.andrd@gmail.com", displayName = "nyaa-63678")
+           navController = rememberNavController(),
+            user = User(email= "arena.andrd@gmail.com", displayName = "nyaa")
             )
     }
 }

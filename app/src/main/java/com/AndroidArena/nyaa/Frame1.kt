@@ -80,7 +80,7 @@ fun Frame1(
 //                    contentColor = primaryTextColor,
 //                ),
 //                elevation = ButtonDefaults.elevation(
-//                    defaultElevation = 4.dp,
+//                    defaultElevation = 4.dp,navController: NavController
 //                    pressedElevation = 7.dp,
 //                ),
 //            ) {
@@ -134,7 +134,7 @@ fun Frame1(
         ) {
       Spacer(modifier = Modifier.size(670.dp))
 
-            AuthScreen(AuthViewModel())
+            AuthScreen(AuthViewModel(), navController)
         }
 
 

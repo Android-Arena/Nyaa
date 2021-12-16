@@ -15,6 +15,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.AndroidArena.nyaa.Frame2
+import com.AndroidArena.nyaa.Screen
 import com.AndroidArena.nyaa.model.AuthViewModel
 import com.AndroidArena.nyaa.utils.AuthResultContract
 import com.google.android.gms.common.api.ApiException
@@ -47,7 +48,9 @@ onClick:()-> Unit ){
 @ExperimentalCoroutinesApi
 @ExperimentalMaterialApi
 @Composable
-fun AuthScreen(authViewModel: AuthViewModel){
+fun AuthScreen(authViewModel: AuthViewModel,
+               navController: NavController,
+               ){
 
     val coroutineScope= rememberCoroutineScope()
     var text by remember { mutableStateOf<String?> (null)}
@@ -66,6 +69,8 @@ fun AuthScreen(authViewModel: AuthViewModel){
                         authViewModel.signIn(
                             email = account.email,
                             displayName = account.displayName)
+                        navController.navigate(Screen.frame2.route)
+
                     }
                 }
             }catch (e:ApiException){
@@ -77,8 +82,8 @@ fun AuthScreen(authViewModel: AuthViewModel){
         authResultLauncher.launch(signInRequestCode)
     })
     user?.let{
-        Frame2(
-           // navController= rememberNavController(),
-            user = it)
+        Frame2(user = it,
+            navController= rememberNavController()
+            )
     }
 }
