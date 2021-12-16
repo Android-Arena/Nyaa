@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterialApi::class)
     @ExperimentalComposeUiApi
     @ExperimentalAnimationApi
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle? ) {
         super.onCreate(savedInstanceState)
         setContent {
 
@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
 
             NyaaTheme {
                 var navController= rememberAnimatedNavController()
-                SetupNavGraph(navController = navController, )
+                SetupNavGraph(navController = navController )
 
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {

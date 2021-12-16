@@ -36,11 +36,19 @@ val Typography = Typography(
         fontSize = 24.sp,
         textAlign = TextAlign.Center
         ),
+
         h1 =TextStyle(
             fontFamily = robotoFamily,
             fontWeight = FontWeight.Bold,
             fontSize = 50.sp,
             textAlign = TextAlign.Center
+        ),
+        h2 =TextStyle(
+            fontFamily = robotoFamily,
+            fontWeight = FontWeight.Bold,
+            fontSize = 27.sp,
+            textAlign = TextAlign.Center,
+            fontStyle = FontStyle.Italic
         ),
         h6 = TextStyle(
             fontFamily = robotoFamily,
