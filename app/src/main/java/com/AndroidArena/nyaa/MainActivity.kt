@@ -37,11 +37,15 @@ import com.AndroidArena.nyaa.ui.theme.robotoFamily
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.composable
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 
 class MainActivity : ComponentActivity() {
 
 //    lateinit var navController: NavHostController
-
+      lateinit var storage: FirebaseStorage
 
 
     @OptIn(ExperimentalMaterialApi::class)
@@ -61,7 +65,7 @@ class MainActivity : ComponentActivity() {
                     /*or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_FULLSCREEN)*/
                     )
-
+        storage = Firebase.storage
 
 
             NyaaTheme {

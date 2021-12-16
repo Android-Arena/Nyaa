@@ -16,6 +16,7 @@ import com.AndroidArena.nyaa.model.User
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
+@ExperimentalMaterialApi
 @ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @ExperimentalAnimationApi
