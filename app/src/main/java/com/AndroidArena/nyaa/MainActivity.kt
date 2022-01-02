@@ -30,22 +30,28 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.AndroidArena.nyaa.model.User
 import com.AndroidArena.nyaa.ui.theme.primaryColor
 import com.AndroidArena.nyaa.ui.theme.primaryTextColor
 import com.AndroidArena.nyaa.ui.theme.robotoFamily
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.composable
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 
 class MainActivity : ComponentActivity() {
 
 //    lateinit var navController: NavHostController
+      lateinit var storage: FirebaseStorage
 
 
-
+    @OptIn(ExperimentalMaterialApi::class)
     @ExperimentalComposeUiApi
     @ExperimentalAnimationApi
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle? ) {
         super.onCreate(savedInstanceState)
         setContent {
 
@@ -59,12 +65,12 @@ class MainActivity : ComponentActivity() {
                     /*or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     or View.SYSTEM_UI_FLAG_FULLSCREEN)*/
                     )
-
+        storage = Firebase.storage
 
 
             NyaaTheme {
                 var navController= rememberAnimatedNavController()
-                SetupNavGraph(navController = navController)
+                SetupNavGraph(navController = navController )
 
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {

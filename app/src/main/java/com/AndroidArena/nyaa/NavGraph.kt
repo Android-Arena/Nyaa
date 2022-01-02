@@ -10,11 +10,15 @@ import androidx.navigation.compose.NavHost
 //import androidx.navigation.compose.composable
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import androidx.compose.animation.core.tween
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.ui.Alignment
+import com.AndroidArena.nyaa.model.User
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
+@ExperimentalMaterialApi
 @ExperimentalComposeUiApi
+@ExperimentalMaterialApi
 @ExperimentalAnimationApi
 @Composable
 fun SetupNavGraph(
@@ -41,16 +45,18 @@ fun SetupNavGraph(
 
         composable(
             route = Screen.frame2.route,
-            enterTransition = {
+            /*enterTransition = {
                 expandIn(
                     // Overwrites the default spring animation with tween
                     animationSpec = tween(500, easing = LinearOutSlowInEasing),
                     // Overwrites the corner of the content that is first revealed
                     expandFrom = Alignment.BottomEnd
                 )
-            }
+            }*/
         ) {
-            Frame2( navController)
+           // val useri=User(user.email,user.displayName)
+          //  var
+            Frame2( navController,  user= User("",""))
         }
 
         composable(
